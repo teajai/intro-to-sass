@@ -1,0 +1,118 @@
+// Just put everything in 1 file - bad and would put it into different files in reality
+$mainHighlight:darkturquoise;
+$contrastColour:turquoise;
+$marginCommon: 20px;
+
+%wrapper-box {
+    box-sizing:border-box; /* Padding is included in the width of the box */
+  padding: $marginCommon 30px;
+  background: #fff;
+}
+
+%highlight-padding {
+    padding: 10px 15px;
+}
+%highlight-common {
+            background: $mainHighlight;
+            color: #fff;
+}
+
+body {
+  margin: $marginCommon 0;
+    background-color: lightgray;
+}
+
+.container {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+.header {
+    background-color:white;
+    margin-bottom: $marginCommon;
+}
+.header-banner {
+    background-color:$mainHighlight;
+    color:white;
+    padding: 40px $marginCommon $marginCommon $marginCommon;
+    text-align: center;
+    border-bottom: 10px solid $contrastColour;
+}
+
+.main-nav {
+  padding: 5px $marginCommon;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    margin-right: 10px;
+
+    a {
+      @extend  %highlight-padding;
+      border-radius: 4px;
+      display: block;
+      color:black;
+      
+        &:hover,
+        &:focus {
+            @extend %highlight-common;
+        }
+    }
+    
+    &.active a
+    {
+           @extend %highlight-common;
+
+
+    }
+    
+  }
+}
+
+.main {
+    @extend %wrapper-box;
+    float:left;
+    width: 600px;
+     margin-right: $marginCommon;
+    h2 {
+        color:$mainHighlight;
+    }
+
+}
+
+.aside {
+    @extend %wrapper-box;
+    width: 380px;
+    float:right;
+    h3 {
+        color:$mainHighlight;
+    }
+    img {
+        width: 100%;
+        padding-bottom: $marginCommon;
+    }
+    
+    a {
+          @extend  %highlight-padding;
+            @extend %highlight-common;
+    }
+    hr {
+    margin-top:$marginCommon;
+    }
+    .quote {
+    margin-left:0;
+    padding-left: $marginCommon;
+    border-left: 10px solid $contrastColour;
+    }
+    cite{
+    font-style:italic;
+    display:block;
+    padding-top: 10px;
+    font-size: 80%;
+    }
+}
+
